@@ -1,0 +1,36 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/miniconda",
+  "hostRequirements": {
+    "cpus": 1
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "" ,
+  "postCreateCommand": "bash /workspaces/$RepositoryName/.profile/setup.sh",
+  "postStartCommand": "bash /workspaces/$RepositoryName/.profile/auto-commit-all.sh",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [],
+      "remote.autoForwardPorts": false
+    },
+    "vscode": {
+      "extensions": [        
+        "ms-python.python",
+      ],
+      "settings": {
+        "git.autofetch": true,
+        "chat.disableAIFeatures": true,
+        "editor.tabSize": 4,
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "bash",
+            "icon": "terminal-bash"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+        
